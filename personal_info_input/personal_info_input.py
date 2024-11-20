@@ -3,3 +3,16 @@
 # Define open/append txt file
 # Define proper input
 # Define ask user for another input
+
+info = {}
+
+full_name = str(input("Enter Full Name: "))
+id_number = input("Enter your Student ID Number: ")
+phone_num = input("Enter Phone Number: ")
+address = input("Enter Address(City)")
+birthdate = input("Enter Birthdate(mm/dd/yyyy)")
+
+
+
+
+
