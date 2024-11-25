@@ -1,31 +1,31 @@
 # Initiate a list for personal data
 # Types of data(Full name, student id number, phone number, address(city), birthdate(mm/dd/yyyy))
 # Define open/append txt file
-# Define proper input
+# Define proper input: 
 # Define ask user for another input
 
-info = {}
+info = []
+phone_digits = 11
 
 full_name = str(input("Enter Full Name: "))
-id_number = input("Enter your Student ID Number: ")
-phone_num = input("Enter Phone Number: ")
-address = input("Enter Address(City): ")
-birthdate = input("Enter Birthdate(mm/dd/yyyy): ")
+id_number = input("Enter your Student ID Number (ex. 2024-01234-MN-0): ")
+phone_num = input("Enter Phone Number: ") 
+if len(phone_num) != phone_digits:
+    print("You're phone number must be 11 digits")
+address = str(input("Enter your Address(City): "))
+birthdate = input("Enter your Birthdate(mm/dd/yyyy): ")
+
+user_input = [full_name, id_number, phone_num, address, birthdate]
+
+info.append(user_input)
 
 def open_txt_file():
-    with open('personal_data', 'a') as file_handle:
-        file_handle.write(full_name)
-        file_handle.write(id_number)
-        file_handle.write(phone_num)
-        file_handle.write(address)
-        file_handle.write(birthdate)
-
-
-def valid_input():
     pass
 
 def ask_input():
     pass
+
+print(info)
 
 
 
