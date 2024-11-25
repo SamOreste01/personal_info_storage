@@ -24,7 +24,7 @@ def main():
 
         while True:
             phone_num = input("Enter Phone Number: ") 
-            if len(phone_num) != phone_digits:
+            if len(phone_num) == phone_digits:
                 break
             else:
                 print("You're phone number must be 11 digits")
@@ -39,9 +39,15 @@ def main():
         except ValueError:
             ("Invalid Input!")
 
-        user_input = [full_name, id_number, phone_num, address, birthdate]
+        choice = (input("Do you want to enter another entry? (Y/N): "))
+        if choice == "Y":
+            continue
+        else:
+            break
 
-        info.append(user_input)
+    user_input = [full_name, id_number, phone_num, address, birthdate]
+
+    info.append(user_input)
 
 def open_txt_file():
     pass
