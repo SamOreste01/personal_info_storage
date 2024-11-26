@@ -1,18 +1,19 @@
 # Initiate a list for personal data
 # Types of data(Full name, student id number, phone number, address(city), birthdate(mm/dd/yyyy))
 # Define open/append txt file
-# Define proper input: 
-# Define ask user for another input
+# Define main that includes:
+# Input standards, ask user for another input
 
 info = []
 phone_digits = 11
 id_number_digits = 15
+birthdate_charac = 10
 
 def main():
     while True:
         try:
             full_name = str(input("Enter Full Name: "))
-        except ValueError:
+        except Exception:
             ("Invalid Input!")
         
         while True:
@@ -20,7 +21,7 @@ def main():
             if len(id_number) == id_number_digits:
                 break
             else: 
-                print("You're id number must have 15 characters")
+                print("You're id number must have 15 characters, please follow the format given")
 
         while True:
             phone_num = input("Enter Phone Number: ") 
@@ -31,13 +32,15 @@ def main():
         
         try:
             address = str(input("Enter your Address(City): "))
-        except ValueError:
+        except Exception:
             ("Invalid Input!")
 
-        try:
+        while True:
             birthdate = input("Enter your Birthdate(mm/dd/yyyy): ")
-        except ValueError:
-            ("Invalid Input!")
+            if len(birthdate) == birthdate_charac:
+                break
+            else: 
+                print("You're birthdate must have 10 characters, please follow the format given")
 
         choice = (input("Do you want to enter another entry? (Y/N): "))
         if choice == "Y":
@@ -49,14 +52,15 @@ def main():
 
     info.append(user_input)
 
-def open_txt_file():
-    pass
+def file_handle():
+    with open("personal_info.txt", "a") as file:
+            file.write(info)
 
-def ask_input():
-    pass
+
+
 
 main()
-print(info)
+file_handle()
 
 
 
