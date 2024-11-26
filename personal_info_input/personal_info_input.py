@@ -48,15 +48,13 @@ def main():
         else:
             break
 
-    user_input = [full_name, id_number, phone_num, address, birthdate]
-
+    user_input = f"{full_name}, {id_number}, {phone_num}, {address}, {birthdate}\n"
     info.append(user_input)
 
 def file_handle():
     with open("personal_info.txt", "a") as file:
-            file.write(info)
-
-
+            file.writelines(info)
+    print("All information was successfully saved to 'personal_info.txt'")
 
 
 main()
