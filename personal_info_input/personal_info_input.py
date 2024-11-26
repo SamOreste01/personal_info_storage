@@ -14,7 +14,7 @@ def main():
         try:
             full_name = str(input("Enter Full Name: ")) # Asks user for their full name
         except Exception:
-            ("Invalid Input!")
+            print("Invalid Input! Enter a valid Name")
         
         while True:
             id_number = input("Enter your Student ID Number (ex. 2024-01234-MN-0): ") # Asks user for their id number and restricts them to obey the given format
@@ -33,15 +33,15 @@ def main():
         try:
             address = str(input("Enter your Address(City): ")) # Asks user for address
         except Exception:
-            ("Invalid Input!")
+            print("Invalid Input! Enter a valid Address")
 
         while True:
             print("M - male, F - Female, NA - Prefer not to say") #Asks user for sex
             sex = input("Enter your sex (M/F/NA): ")
-            if sex == "M" or "F" or "NA":
+            if sex in ["M", "F", "NA"]:
                 break
             else:
-                print("Choose from M/F/NA")
+                print("Invalid Input! Choose from M/F/NA")
 
         while True:
             birthdate = input("Enter your Birthdate(mm/dd/yyyy): ") # Asks user for their birthdate and restricts them to obey the given format
@@ -53,12 +53,12 @@ def main():
         while True:
             print("SI - Single, M - Married, W - Widowed, SP - Seperated") 
             marital_stat = input("Enter your Marital Status (SI/M/W/SP): ") # Asks user for marital status
-            if marital_stat == "SI" or "M" or "W" or "SP":
+            if marital_stat in ["SI", "M", "W", "SP"]:
                 break
             else:
-                print("Choose from SI/M/W/SP")
+                print("Invalid Input! Choose from SI/M/W/SP")
 
-        user_input = f"{full_name}, {id_number}, {phone_num}, {address}, {birthdate}\n" 
+        user_input = f"{full_name}, {id_number}, {phone_num}, {address}, {sex}, {birthdate}, {marital_stat}\n" 
         info.append(user_input)
 
         choice = (input("Do you want to enter another entry? (Y/N): ")) # Asks user if they want to input another or leave
