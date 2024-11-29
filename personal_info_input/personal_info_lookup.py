@@ -7,12 +7,25 @@
 entry = []
 
 def name_lookup():
-    full_name = input("Enter full name of the person you're looking for: ") 
+    while True:
+        full_name = input("Enter full name of the person you're looking for: ") 
+        if full_name == "":
+            print("Please Enter a Name")
+                 
+        try:
+            with open("personal_info.txt", "r") as file:
+                for line in file:
+                    if full_name in line:
+                        entry.append(line)
 
-    with open("personal_info.txt", "r") as file:
-        for line in file:
-            if full_name in line:
-                entry.append(line)
+                    else:
+                        print(f"{full_name}'s Information was not found")
+        
+        except FileNotFoundError:
+            print("File was not found")
+        except Exception:
+            print("An error occured")
+            
 
 name_lookup()
 print(entry)
