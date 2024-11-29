@@ -25,10 +25,13 @@ def name_lookup():
             print("File was not found")
         except Exception:
             print("An error occured")
-            
 
+        choice = input("Do you want to lookup for another person? (Y/N): ")
+        if choice == "Y":
+            continue
+        else:
+            print("Now Leaving the Program :D")
+            break
+        
 name_lookup()
 print(entry)
-
-
-
